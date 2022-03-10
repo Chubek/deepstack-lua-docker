@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM golang:1.18rc1-alpine3.15
 
 
 RUN apk update
@@ -44,10 +44,7 @@ RUN cd ~/DeepHoldem/ACPCServer && make
 
 
 WORKDIR /home
-RUN mkdir logs
-COPY boot.sh ./
-RUN chmod +x ./boot.sh
+COPY server.go ./
+RUN go build ./server.go
 
-
-
-ENTRYPOINT [ "./boot.sh" ]
+ENTRYPOINT [ "./server" ]

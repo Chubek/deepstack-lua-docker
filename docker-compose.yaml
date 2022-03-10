@@ -1,0 +1,14 @@
+services:
+  stacker:
+    container_name: stackerc
+    build: .  
+    network_mode: "host" 
+  
+
+  caddy:
+      container_name: caddyc
+      image: caddy:2-alpine
+      restart: unless-stopped
+      network_mode: "host"
+      volumes:
+          - ./Caddyfile:/etc/caddy/Caddyfile
