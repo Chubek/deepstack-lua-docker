@@ -10,7 +10,7 @@ RUN apk add bash
 RUN apk add cmake
 RUN apk add git
 RUN apk add unzip
-
+RUN apk add wget
 
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive &&\
                     cd ~/torch  && \
@@ -26,7 +26,6 @@ RUN ~/torch/install/bin/luarocks install luasocket
 
 RUN ~/torch/install/bin/luarocks install graphviz
 
-RUN ~/torch/install/bin/luarocks install cutorch
 
 RUN git clone https://github.com/happypepper/DeepHoldem.git ~/DeepHoldem
 
