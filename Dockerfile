@@ -36,10 +36,15 @@ RUN unzip ~/DeepHoldem/Source/Game/Evaluation/HandRanks.zip -d ~/DeepHoldem/Sour
 
 RUN mkdir /home/logs
 
+
+
+
 RUN cd ~/DeepHoldem/ACPCServer && make
 
+COPY boot.sh ~/
+
+RUN chmod +x ~/boot.sh
 
 
-RUN chmod +x ./boot.sh
 
-ENTRYPOINT [ "./boot.sh" ]
+ENTRYPOINT [ "~/boot.sh" ]
