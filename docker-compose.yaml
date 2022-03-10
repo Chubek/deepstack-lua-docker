@@ -2,9 +2,10 @@ services:
   stack:
     container_name: stackc
     build: .
+    command: "cd ~/DeepHoldem/ACPCServer && ./dealer matchName holdem.limit.2p.reverse_blinds.game 1000 0 Alice Bob 16177 48777"
     ports:
-      - "2984:2984"
-      - "2985:2985"
+      - "16177:16177"
+      - "48777:48777"
     networks:
       - stack
     volumes:
