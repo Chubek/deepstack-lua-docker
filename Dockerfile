@@ -3,6 +3,7 @@ FROM alpine:latest
 RUN apk update
 RUN apk upgrade
 RUN apk add alpine-sdk
+apk add build-base
 RUN apk add readline
 RUN apk add make
 RUN apk add bash

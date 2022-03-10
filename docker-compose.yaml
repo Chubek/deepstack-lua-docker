@@ -1,6 +1,6 @@
 services:
   mathcord:
-    container_name: mathcordc
+    container_name: stackc
     build: .
     ports:
       - "2984:2984"
