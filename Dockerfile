@@ -12,6 +12,7 @@ RUN apk add cmake
 RUN apk add git
 RUN apk add unzip
 RUN apk add wget
+RUN apk add perl
 
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive &&\
                     cd ~/torch  && \
@@ -43,12 +44,8 @@ RUN cd ~/DeepHoldem/ACPCServer && make
 
 
 WORKDIR /home
-
 RUN mkdir logs
-
 COPY boot.sh ./
-
-
 RUN chmod +x ./boot.sh
 
 
