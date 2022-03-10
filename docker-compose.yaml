@@ -1,0 +1,32 @@
+services:
+  mathcord:
+    container_name: mathcordc
+    build: .
+    ports:
+      - "2984:2984"
+      - "2985:2985"
+    networks:
+      - stack
+    volumes:
+      - ~/logs-stack:/home/logs
+    hostname: stackapi
+
+
+
+  caddy:
+    container_name: caddyc
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - stack
+
+
+
+networks:
+  mathcord:
+    external: true
