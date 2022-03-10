@@ -1,5 +1,6 @@
 FROM alpine:latest
 
+
 RUN apk update
 RUN apk upgrade
 RUN apk add alpine-sdk
@@ -34,17 +35,22 @@ RUN mkdir ~/DeepHoldem/Source/Game/Evaluation/HandRanks
 
 RUN unzip ~/DeepHoldem/Source/Game/Evaluation/HandRanks.zip -d ~/DeepHoldem/Source/Game/Evaluation/HandRanks
 
-RUN mkdir /home/logs
 
 
 
 
 RUN cd ~/DeepHoldem/ACPCServer && make
 
-COPY boot.sh ~/
 
-RUN chmod +x ~/boot.sh
+WORKDIR /home
+
+RUN mkdir logs
+
+COPY boot.sh ./
+
+
+RUN chmod +x ./boot.sh
 
 
 
-ENTRYPOINT [ "~/boot.sh" ]
+ENTRYPOINT [ "./boot.sh" ]
