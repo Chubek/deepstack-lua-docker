@@ -43,8 +43,9 @@ RUN unzip ~/DeepHoldem/Source/Game/Evaluation/HandRanks.zip -d ~/DeepHoldem/Sour
 RUN cd ~/DeepHoldem/ACPCServer && make
 
 
-WORKDIR /home
 COPY server.go ./
 RUN go build ./server.go
 
 ENTRYPOINT [ "./server" ]
+
+
