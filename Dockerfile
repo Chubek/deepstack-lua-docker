@@ -15,7 +15,7 @@ RUN apk add wget
 RUN apk add perl
 
 RUN git clone https://github.com/torch/distro.git torch --recursive &&\
-                    cd ~/torch  && \
+                    cd torch  && \
                     chmod +x ./clean.sh &&\
                     ./clean.sh && chmod +x ./install.sh &&\
                     TORCH_LUA_VERSION=LUA52 ./install.sh
