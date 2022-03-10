@@ -21,11 +21,11 @@ RUN git clone https://github.com/torch/distro.git ~/torch --recursive &&\
 
 RUN chmod +x ~/torch/install/bin/luarocks
 
-RUN ~/torch/install/bin/luarocks install luasocket
+RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install luasocket
 
-RUN ~/torch/install/bin/luarocks install graphviz
+RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install graphviz
 
-RUN ~/torch/install/bin/luarocks install cutorch
+RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install cutorch
 
 RUN git clone https://github.com/happypepper/DeepHoldem.git ~/DeepHoldem
 
