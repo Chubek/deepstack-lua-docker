@@ -19,13 +19,14 @@ RUN git clone https://github.com/torch/distro.git ~/torch --recursive &&\
                     TORCH_LUA_VERSION=LUA52 ./install.sh
 
 
-RUN chmod +x ~/torch/install/bin/luarocks
 
-RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install luasocket
+RUN source ~/torch/install/bin/torch-activate
 
-RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install graphviz
+RUN ~/torch/install/bin/luarocks install luasocket
 
-RUN source ~/torch/install/bin/torch-activate && ~/torch/install/bin/luarocks install cutorch
+RUN ~/torch/install/bin/luarocks install graphviz
+
+RUN ~/torch/install/bin/luarocks install cutorch
 
 RUN git clone https://github.com/happypepper/DeepHoldem.git ~/DeepHoldem
 
