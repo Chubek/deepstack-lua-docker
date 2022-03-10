@@ -19,6 +19,8 @@ RUN git clone https://github.com/torch/distro.git ~/torch --recursive &&\
                     TORCH_LUA_VERSION=LUA52 ./install.sh
 
 
+RUN chmod +x ~/torch/install/bin/luarocks
+
 RUN ~/torch/install/bin/luarocks install luasocket
 
 RUN ~/torch/install/bin/luarocks install graphviz
