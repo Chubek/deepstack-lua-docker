@@ -34,10 +34,10 @@ RUN mkdir ~/DeepHoldem/Source/Game/Evaluation/HandRanks
 
 RUN unzip ~/DeepHoldem/Source/Game/Evaluation/HandRanks.zip -d ~/DeepHoldem/Source/Game/Evaluation/HandRanks
 
-
-RUN cd ACPCServer && make
-
 RUN mkdir /home/logs
+
+RUN cd ~/DeepHoldem/ACPCServer && make
+
 
 
 RUN chmod +x ./boot.sh
