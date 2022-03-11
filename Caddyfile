@@ -5,3 +5,11 @@ https://stack.chubakbidpaa.com  {
 
 }
 }
+
+https://crayon.chubakbidpaa.com  {
+    reverse_proxy 0.0.0.0:8888  {
+    header_up Host {upstream_hostport}
+	header_up X-Forwarded-Host {host}	
+
+}
+}
